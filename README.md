@@ -1,26 +1,47 @@
-# LLM Document Intelligence
+# LLM Document Intelligence 📄🤖
 
-An AI-powered application that allows users to upload documents and interact with them using Large Language Models.
+An LLM-powered document intelligence application that allows users to upload documents and ask questions or generate summaries using a Retrieval-Augmented Generation (RAG) pipeline.
 
-## Features
-- Upload PDF or text documents
-- Automatic document summarization
-- Question & Answering over documents
-- Vector search using FAISS
+---
 
-## Tech Stack
+## 🚀 Features
+- Upload PDF or TXT documents
+- Automatic text extraction and chunking
+- Semantic search using FAISS vector database
+- Question Answering and Summarization
+- Fully local LLM inference (no paid APIs)
+
+---
+
+## 🧠 Architecture
+1. Document is uploaded via Streamlit UI
+2. Text is extracted and split into chunks
+3. Embeddings are generated using sentence-transformers
+4. FAISS stores embeddings for similarity search
+5. Relevant chunks are retrieved
+6. A local LLM generates grounded answers
+
+---
+
+## 🛠️ Tech Stack
 - Python
-- LangChain
-- OpenAI
-- FAISS
 - Streamlit
+- LangChain
+- FAISS
+- Hugging Face Transformers
+- sentence-transformers
+- PyTorch
 
-## How It Works
-1. Document is split into chunks
-2. Embeddings are generated and stored in FAISS
-3. LLM retrieves relevant chunks to answer user queries
+---
 
-## Run Locally
+## ▶️ How to Run Locally
+
 ```bash
+git clone https://github.com/smarthackerpro/llm-document-intelligence.git
+cd llm-document-intelligence
+
+python -m venv venv
+source venv/bin/activate
+
 pip install -r requirements.txt
-streamlit run app.py
+python -m streamlit run app.py
